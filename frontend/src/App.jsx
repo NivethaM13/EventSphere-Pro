@@ -36,12 +36,13 @@ import Reviews from "./pages/Reviews";
 import AIAssistant from "./pages/AIAssistant";
 
 import Sponsors from "./pages/Sponsors";
-
+import AuditLogs from "./pages/AuditLogs";
 
 import Refunds from "./pages/Refunds";
 import LiveStreams from "./pages/LiveStreams";
 
 import SeatManagement from "./pages/SeatManagement";
+import Reports from "./pages/Reports";
 
 import TicketManagement from "./pages/TicketManagement";
 import Coupons from "./pages/Coupons";
@@ -75,8 +76,18 @@ function App() {
 />
 
 <Route
+  path="/audit-logs"
+  element={<AuditLogs />}
+/>
+
+<Route
   path="/refunds"
   element={<Refunds />}
+/>
+
+<Route
+  path="/reports"
+  element={<Reports />}
 />
 
 <Route

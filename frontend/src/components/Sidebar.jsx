@@ -76,6 +76,14 @@ function Sidebar() {
         <div style={menuItem}>🤝 Sponsors</div>
       </Link>
 
+      <Link to="/reports" style={linkStyle}>
+  <div style={menuItem}>📊 Reports</div>
+</Link>
+
+<Link to="/audit-logs" style={linkStyle}>
+  <div style={menuItem}>📜 Audit Logs</div>
+</Link>
+
         
 
         <Link to="/categories" style={linkStyle}>

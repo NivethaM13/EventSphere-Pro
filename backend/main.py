@@ -18,10 +18,15 @@ from models.event_model import Event
 from routes.event_route import router as event_router
 from models.event_media_model import EventMedia
 from routes.event_media_route import router as event_media_router
+
 from fastapi.staticfiles import StaticFiles
 from routes.wishlist_route import router as wishlist_router
+
 from models.wishlist_model import Wishlist
 from models.checkin_model import CheckIn
+
+from models.audit_log_model import AuditLog
+from routes.audit_log_route import router as audit_log_router
 
 from models.live_stream_model import LiveStream
 from routes.live_stream_route import router as live_stream_router
@@ -38,6 +43,8 @@ from routes.message_route import router as message_router
 
 from models.sponsor_model import Sponsor
 from routes.sponsor_route import router as sponsor_router
+
+from routes.report_route import router as report_router
 
 from models.ticket_model import Ticket
 from routes.ticket_route import router as ticket_router
@@ -57,8 +64,9 @@ app.include_router(
     tags=["Ticket Management"]
 )
 app.include_router(review_router)
+app.include_router(audit_log_router)
 app.include_router(sponsor_router)
-
+app.include_router(report_router)
 app.include_router(coupon_router)
 app.include_router(refund_router)
 app.include_router(ai_router)
