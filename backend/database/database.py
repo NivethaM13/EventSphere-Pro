@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
+
 DATABASE_URL = "mysql+pymysql://root:Root%401363@localhost/eventsphere_pro"
 
 

@@ -36,6 +36,7 @@ function MyBookings() {
             <th style={tableHead}>Ticket ID</th>
             <th style={tableHead}>Quantity</th>
             <th style={tableHead}>Status</th>
+            <th style={tableHead}>Actions</th>
           </tr>
         </thead>
 
@@ -48,6 +49,22 @@ function MyBookings() {
               <td style={tableCell}>{booking.ticket_id}</td>
               <td style={tableCell}>{booking.quantity}</td>
               <td style={tableCell}>{booking.booking_status}</td>
+
+              <td style={tableCell}>
+                <button
+                  onClick={() => (window.location.href = "/reviews")}
+                  style={{
+                    background: "#2563eb",
+                    color: "white",
+                    border: "none",
+                    padding: "8px 12px",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                  }}
+                >
+                  ⭐ Review
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>

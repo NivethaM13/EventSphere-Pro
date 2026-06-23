@@ -60,9 +60,21 @@ function Sidebar() {
           <div style={menuItem}>🔍 Event Search</div>
         </Link>
 
+        <Link to="/live-streams" style={linkStyle}>
+        <div style={menuItem}>🎥 Live Streaming</div>
+        </Link>
+
         <Link to="/event-discovery" style={linkStyle}>
           <div style={menuItem}>🌟 Event Discovery</div>
         </Link>
+
+        <Link to="/ai-assistant" style={linkStyle}>
+         <div style={menuItem}>🤖 AI Assistant</div>
+       </Link>
+
+       <Link to="/sponsors" style={linkStyle}>
+        <div style={menuItem}>🤝 Sponsors</div>
+      </Link>
 
         
 
@@ -91,6 +103,19 @@ function Sidebar() {
           <div style={menuItem}>📄 My Bookings</div>
         </Link>
 
+        <Link to="/reviews" style={linkStyle}>
+  <div style={menuItem}>⭐ Reviews & Ratings</div>
+</Link>
+
+
+<Link to="/coupons" style={linkStyle}>
+  <div style={menuItem}>🎟 Coupons</div>
+</Link>
+
+<Link to="/refunds" style={linkStyle}>
+  <div style={menuItem}>💸 Refunds</div>
+</Link>
+
         <Link to="/attendees" style={linkStyle}>
           <div style={menuItem}>👥 Attendees</div>
         </Link>
@@ -114,6 +139,17 @@ function Sidebar() {
         <Link to="/wishlist" style={linkStyle}>
   <div style={menuItem}>❤️ Wishlist</div>
 </Link>
+
+<Link to="/notifications" style={linkStyle}>
+  <div style={menuItem}>🔔 Notifications</div>
+</Link>
+
+
+<Link to="/messages" style={linkStyle}>
+  <div style={menuItem}>📩 Messages</div>
+</Link>
+
+
 
 
       </div>

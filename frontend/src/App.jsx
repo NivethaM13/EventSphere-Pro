@@ -17,6 +17,8 @@ import Settings from "./pages/Settings";
 
 import Wishlist from "./pages/Wishlist";
 
+import Notifications from "./pages/Notifications";
+
 import TicketSuccess from "./pages/TicketSuccess";
 import CreateEvent from "./pages/CreateEvent";
 import EventMedia from "./pages/EventMedia";
@@ -29,10 +31,20 @@ import EditEvent from "./pages/EditEvent";
 import ManageCategories from "./pages/ManageCategories";
 import MyBookings from "./pages/MyBookings";
 import CheckIn from "./pages/CheckIn";
+import Messages from "./pages/Messages";
+import Reviews from "./pages/Reviews";
+import AIAssistant from "./pages/AIAssistant";
+
+import Sponsors from "./pages/Sponsors";
+
+
+import Refunds from "./pages/Refunds";
+import LiveStreams from "./pages/LiveStreams";
 
 import SeatManagement from "./pages/SeatManagement";
 
 import TicketManagement from "./pages/TicketManagement";
+import Coupons from "./pages/Coupons";
 
 function App() {
   return (
@@ -48,13 +60,43 @@ function App() {
 />
 
 <Route
+  path="/coupons"
+  element={<Coupons />}
+/>
+
+<Route
   path="/ticket-management"
   element={<TicketManagement />}
 />
 
 <Route
+  path="/ai-assistant"
+  element={<AIAssistant />}
+/>
+
+<Route
+  path="/refunds"
+  element={<Refunds />}
+/>
+
+<Route
+  path="/live-streams"
+  element={<LiveStreams />}
+/>
+
+<Route
+  path="/reviews"
+  element={<Reviews />}
+/>
+
+<Route
   path="/seat-management"
   element={<SeatManagement />}
+/>
+
+<Route
+  path="/sponsors"
+  element={<Sponsors />}
 />
 
 <Route
@@ -69,6 +111,11 @@ function App() {
 />
 
 <Route
+  path="/notifications"
+  element={<Notifications />}
+/>
+
+<Route
   path="/wishlist"
   element={<Wishlist />}
 />
@@ -76,6 +123,11 @@ function App() {
 <Route
   path="/edit-event/:id"
   element={<EditEvent />}
+/>
+
+<Route
+  path="/messages"
+  element={<Messages />}
 />
 
 

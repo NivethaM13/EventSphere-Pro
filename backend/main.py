@@ -4,6 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from routes.payment_route import router as payment_router
 from routes.qr_route import router as qr_router
 
+from routes.notification_route import router as notification_router
+from models.notification_model import Notification
+
 from routes.checkin_route import router as checkin_router
 from routes.seat_route import router as seat_router
 
@@ -19,10 +22,28 @@ from fastapi.staticfiles import StaticFiles
 from routes.wishlist_route import router as wishlist_router
 from models.wishlist_model import Wishlist
 from models.checkin_model import CheckIn
+
+from models.live_stream_model import LiveStream
+from routes.live_stream_route import router as live_stream_router
+
 from models.seat_model import Seat
+
+from routes.review_route import router as review_router
+
+from models.message_model import Message
+from routes.coupon_route import router as coupon_router
+from models.refund_model import Refund
+
+from routes.message_route import router as message_router
+
+from models.sponsor_model import Sponsor
+from routes.sponsor_route import router as sponsor_router
 
 from models.ticket_model import Ticket
 from routes.ticket_route import router as ticket_router
+
+from routes.refund_route import router as refund_router
+from routes.ai_assistant_route import router as ai_router
 
 from models.booking_model import Booking
 from routes.booking_route import router as booking_router
@@ -35,11 +56,31 @@ app.include_router(
     prefix="/ticket",
     tags=["Ticket Management"]
 )
+app.include_router(review_router)
+app.include_router(sponsor_router)
+
+app.include_router(coupon_router)
+app.include_router(refund_router)
+app.include_router(ai_router)
+app.include_router(live_stream_router)
+
+app.include_router(
+    message_router,
+    prefix="/message",
+    tags=["Messaging"]
+)
+
 
 app.include_router(
     wishlist_router,
     prefix="/wishlist",
     tags=["Wishlist"]
+)
+
+app.include_router(
+    notification_router,
+    prefix="/notification",
+    tags=["Notifications"]
 )
 
 app.add_middleware(

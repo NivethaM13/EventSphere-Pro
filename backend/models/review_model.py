@@ -1,0 +1,13 @@
+from sqlalchemy import Column, Integer, String, ForeignKey, Text
+from database.database import Base
+
+class Review(Base):
+    __tablename__ = "reviews"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    user_id = Column(Integer, ForeignKey("users.id"))
+    event_id = Column(Integer, ForeignKey("events.id"))
+
+    rating = Column(Integer)
+    review = Column(Text)
