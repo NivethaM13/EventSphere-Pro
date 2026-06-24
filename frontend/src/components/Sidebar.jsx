@@ -80,8 +80,18 @@ function Sidebar() {
   <div style={menuItem}>📊 Reports</div>
 </Link>
 
+<Link to="/language-settings" style={linkStyle}>
+  <div style={menuItem}>🌐 Languages</div>
+</Link>
+
+
 <Link to="/audit-logs" style={linkStyle}>
   <div style={menuItem}>📜 Audit Logs</div>
+</Link>
+
+
+<Link to="/bi-dashboard" style={linkStyle}>
+  <div style={menuItem}>📊 BI Dashboard</div>
 </Link>
 
         

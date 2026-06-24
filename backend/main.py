@@ -49,6 +49,11 @@ from routes.report_route import router as report_router
 from models.ticket_model import Ticket
 from routes.ticket_route import router as ticket_router
 
+from routes.bi_dashboard_route import router as bi_dashboard_router
+
+from models.language_model import LanguagePreference
+from routes.language_route import router as language_router
+
 from routes.refund_route import router as refund_router
 from routes.ai_assistant_route import router as ai_router
 
@@ -69,8 +74,10 @@ app.include_router(sponsor_router)
 app.include_router(report_router)
 app.include_router(coupon_router)
 app.include_router(refund_router)
+app.include_router(language_router)
 app.include_router(ai_router)
 app.include_router(live_stream_router)
+app.include_router(bi_dashboard_router)
 
 app.include_router(
     message_router,

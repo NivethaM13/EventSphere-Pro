@@ -35,6 +35,8 @@ import Messages from "./pages/Messages";
 import Reviews from "./pages/Reviews";
 import AIAssistant from "./pages/AIAssistant";
 
+import LanguageSettings from "./pages/LanguageSettings";
+
 import Sponsors from "./pages/Sponsors";
 import AuditLogs from "./pages/AuditLogs";
 
@@ -43,6 +45,8 @@ import LiveStreams from "./pages/LiveStreams";
 
 import SeatManagement from "./pages/SeatManagement";
 import Reports from "./pages/Reports";
+
+import BIDashboard from "./pages/BIDashboard";
 
 import TicketManagement from "./pages/TicketManagement";
 import Coupons from "./pages/Coupons";
@@ -66,6 +70,11 @@ function App() {
 />
 
 <Route
+  path="/language-settings"
+  element={<LanguageSettings />}
+/>
+
+<Route
   path="/ticket-management"
   element={<TicketManagement />}
 />
@@ -73,6 +82,11 @@ function App() {
 <Route
   path="/ai-assistant"
   element={<AIAssistant />}
+/>
+
+<Route
+  path="/bi-dashboard"
+  element={<BIDashboard />}
 />
 
 <Route
