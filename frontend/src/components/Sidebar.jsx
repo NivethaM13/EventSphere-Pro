@@ -4,13 +4,13 @@ function Sidebar() {
   return (
     <div
       style={{
-        width: "300px",
+        width: "235px",
         minHeight: "100vh",
         background: "linear-gradient(180deg,#0f172a,#020617)",
         color: "white",
         display: "flex",
         flexDirection: "column",
-        padding: "30px",
+        padding: "18px",
         boxSizing: "border-box",
         borderRight: "1px solid rgba(255,255,255,0.08)",
       }}
@@ -20,7 +20,7 @@ function Sidebar() {
         <h1
           style={{
             margin: 0,
-            fontSize: "32px",
+            fontSize: "24px",
             fontWeight: "800",
           }}
         >
@@ -30,8 +30,8 @@ function Sidebar() {
         <p
           style={{
             color: "#94a3b8",
-            marginTop: "10px",
-            fontSize: "14px",
+            marginTop: "6px",
+            fontSize: "12px",
           }}
         >
           Professional Event Management Platform
@@ -41,10 +41,10 @@ function Sidebar() {
       {/* Navigation */}
       <div
         style={{
-          marginTop: "40px",
+          marginTop: "20px",
           display: "flex",
           flexDirection: "column",
-          gap: "14px",
+          gap: "8px",
         }}
       >
         <Link to="/dashboard" style={linkStyle}>
@@ -173,7 +173,7 @@ function Sidebar() {
       </div>
 
       {/* Quick Actions */}
-      <div style={{ marginTop: "40px" }}>
+      <div style={{ marginTop: "25px" }}>
         <h4
           style={{
             color: "#94a3b8",
@@ -201,7 +201,7 @@ function Sidebar() {
           marginTop: "35px",
           background: "#1e293b",
           borderRadius: "16px",
-          padding: "20px",
+          padding: "14px",
         }}
       >
         <p
@@ -217,7 +217,7 @@ function Sidebar() {
         <h2
           style={{
             margin: "8px 0",
-            fontSize: "32px",
+            fontSize: "2px",
           }}
         >
           25
@@ -246,14 +246,14 @@ function Sidebar() {
           style={{
             background: "#1e293b",
             borderRadius: "14px",
-            padding: "16px",
+            padding: "12px",
           }}
         >
           <p
             style={{
               margin: 0,
               fontWeight: "700",
-              fontSize: "15px",
+              fontSize: "14px",
             }}
           >
             EventSphere Pro
@@ -280,24 +280,30 @@ const linkStyle = {
 };
 
 const activeMenu = {
-  padding: "16px 18px",
-  borderRadius: "14px",
+  padding: "12px 14px",
+  borderRadius: "10px",
   background: "#2563eb",
   fontWeight: "600",
+  fontSize: "15px",
   cursor: "pointer",
 };
 
+
 const menuItem = {
-  padding: "16px 18px",
-  borderRadius: "14px",
+  padding: "12px 14px",
+  borderRadius: "10px",
   background: "#1e293b",
   fontWeight: "500",
+  fontSize: "15px",
   cursor: "pointer",
+  transition: "0.3s",
 };
+
+
 
 const actionBtn = {
   width: "100%",
-  padding: "14px",
+  padding: "10px",
   marginBottom: "12px",
   border: "none",
   borderRadius: "12px",

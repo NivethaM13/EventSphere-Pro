@@ -1,4 +1,54 @@
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+import { Line } from "react-chartjs-2";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 function Analytics() {
+  const chartData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Revenue (₹)",
+        data: [10000, 15000, 18000, 25000, 40000, 50000],
+        borderColor: "#2563eb",
+        backgroundColor: "rgba(37,99,235,0.2)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
+  };
+
+  const chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Monthly Revenue",
+      },
+    },
+  };
+
   return (
     <div
       style={{
@@ -54,7 +104,7 @@ function Analytics() {
         </div>
       </div>
 
-      {/* Revenue Section */}
+      {/* Revenue Chart */}
       <div
         style={{
           marginTop: "30px",
@@ -66,21 +116,10 @@ function Analytics() {
       >
         <h2>💰 Revenue Analytics</h2>
 
-        <div
-          style={{
-            height: "250px",
-            background: "#eff6ff",
-            borderRadius: "15px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "18px",
-            color: "#2563eb",
-            fontWeight: "600",
-          }}
-        >
-          Revenue Chart Coming Soon
-        </div>
+        <Line
+          data={chartData}
+          options={chartOptions}
+        />
       </div>
 
       {/* Top Events */}

@@ -9,6 +9,10 @@ import EventList from "./pages/EventList";
 import Dashboard from "./pages/Dashboard";
 import Categories from "./pages/Categories";
 
+import ManageUsers from "./pages/ManageUsers";
+import ManageOrganizers from "./pages/ManageOrganizers";
+
+
 import Attendees from "./pages/Attendees";
 import Analytics from "./pages/Analytics";
 import Organizers from "./pages/Organizers";
@@ -168,6 +172,19 @@ function App() {
   path="/manage-categories"
   element={<ManageCategories />}
 />
+
+
+<Route
+  path="/manage-users"
+  element={<ManageUsers />}
+/>
+
+<Route
+  path="/manage-organizers"
+  element={<ManageOrganizers />}
+/>
+
+
 
 <Route
   path="/attendees"

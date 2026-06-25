@@ -111,13 +111,19 @@ function AdminDashboard() {
             gap: "20px",
           }}
         >
-          <button style={btnStyle}>
-            👥 Manage Users
-          </button>
+          <button
+  style={btnStyle}
+  onClick={() => navigate("/manage-users")}
+>
+  👥 Manage Users
+</button>
 
-          <button style={btnStyle}>
-            🎤 Manage Organizers
-          </button>
+          <button
+  style={btnStyle}
+  onClick={() => navigate("/manage-organizers")}
+>
+  🎤 Manage Organizers
+</button>
 
           <button
             style={btnStyle}
@@ -134,9 +140,14 @@ function AdminDashboard() {
 </button>
 
 
-          <button style={btnStyle}>
-            📈 Analytics
-          </button>
+        <button
+  style={btnStyle}
+  onClick={() => navigate("/analytics")}
+>
+  📈 Analytics
+</button>
+
+
         </div>
       </div>
     </div>

@@ -261,3 +261,20 @@ def organizer_dashboard(
         "total_tickets_sold": 0,
         "total_revenue": 0
     }
+
+    return {
+        "organizer_name": organizer.full_name,
+        "email": organizer.email,
+        "verification_status": organizer.is_verified,
+        "total_events": 0,
+        "total_tickets_sold": 0,
+        "total_revenue": 0
+    }
+
+
+@router.get("/users")
+def get_all_users(
+    db: Session = Depends(get_db)
+):
+    users = db.query(User).all()
+    return users

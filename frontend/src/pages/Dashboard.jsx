@@ -1,9 +1,74 @@
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from "chart.js";
+
+import { Line } from "react-chartjs-2";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
+
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const role = localStorage.getItem("role");
   const navigate = useNavigate();
+
+  const revenueData = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+
+  datasets: [
+    {
+      label: "Revenue",
+
+      data: [8000, 12000, 18000, 25000, 36000, 50000],
+
+      borderColor: "#2563eb",
+
+      backgroundColor: "rgba(37,99,235,0.15)",
+
+      fill: true,
+
+      tension: 0.4,
+
+      pointRadius: 5,
+
+      pointBackgroundColor: "#2563eb",
+    },
+  ],
+};
+
+const revenueOptions = {
+  responsive: true,
+
+  plugins: {
+    legend: {
+      display: false,
+    },
+  },
+
+  scales: {
+    y: {
+      beginAtZero: true,
+    },
+  },
+};
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -95,7 +160,7 @@ function Dashboard() {
         {/* Main Content */}
         <div
           style={{
-            padding: "25px 30px",
+           padding: "18px 20px",
           }}
         >
           {/* Welcome Banner */}
@@ -104,7 +169,7 @@ function Dashboard() {
               background:
                 "linear-gradient(135deg,#2563eb,#7c3aed)",
               color: "white",
-              padding: "22px 30px",
+            padding: "16px 22px",
               borderRadius: "18px",
               marginBottom: "25px",
             }}
@@ -112,7 +177,7 @@ function Dashboard() {
             <h1
               style={{
                 margin: 0,
-                fontSize: "32px",
+                fontSize: "26px",
                 fontWeight: "700",
               }}
             >
@@ -185,25 +250,111 @@ function Dashboard() {
             }}
           >
             <div style={sectionStyle}>
-              <h2 style={sectionTitle}>
-                📈 Revenue Analytics
-              </h2>
-
               <div
-                style={{
-                  height: "180px",
-                  background: "#eff6ff",
-                  borderRadius: "12px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  color: "#2563eb",
-                  fontWeight: "600",
-                  fontSize: "16px",
-                }}
-              >
-                Revenue Chart Area
-              </div>
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: "15px",
+  }}
+>
+  <h2 style={{ margin: 0 }}>
+    📈 Revenue Analytics
+  </h2>
+
+  <span
+    style={{
+      background: "#dcfce7",
+      color: "#15803d",
+      padding: "6px 12px",
+      borderRadius: "20px",
+      fontSize: "13px",
+      fontWeight: "600",
+    }}
+  >
+    +18%
+  </span>
+</div>
+   
+<>
+  <div
+    style={{
+      height: "220px",
+      padding: "10px",
+    }}
+  >
+    <Line
+      data={revenueData}
+      options={revenueOptions}
+    />
+  </div>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(4,1fr)",
+      gap: "15px",
+      marginTop: "20px",
+    }}
+  >
+    <div style={summaryCard}>
+      <h3
+        style={{
+          margin: 0,
+          color: "#2563eb",
+          fontSize: "20px",
+        }}
+      >
+        ₹50,000
+      </h3>
+
+      <p>Total Revenue</p>
+    </div>
+
+    <div style={summaryCard}>
+      <h3
+        style={{
+          margin: 0,
+          color: "#16a34a",
+          fontSize: "24px",
+        }}
+      >
+        120
+      </h3>
+
+      <p>Bookings</p>
+    </div>
+
+    <div style={summaryCard}>
+      <h3
+        style={{
+          margin: 0,
+          color: "#ea580c",
+          fontSize: "24px",
+        }}
+      >
+        ₹420
+      </h3>
+
+      <p>Average Ticket</p>
+    </div>
+
+    <div style={summaryCard}>
+      <h3
+        style={{
+          margin: 0,
+          color: "#7c3aed",
+          fontSize: "20px",
+        }}
+      >
+        +18%
+      </h3>
+
+      <p>Growth</p>
+    </div>
+  </div>
+</>
+
             </div>
 
             <div style={sectionStyle}>
@@ -212,25 +363,41 @@ function Dashboard() {
               </h2>
 
               <div style={eventItem}>
-                🎉 Tech Conference 2026
-              </div>
+  <strong>Tech Conference 2026</strong>
+  <br />
+  <span style={{ color: "#64748b", fontSize: "13px" }}>
+    28 June • Chennai
+  </span>
+</div>
+<div style={eventItem}>
+  <strong>Music Festival</strong>
+  <br />
+  <span style={{ color: "#64748b", fontSize: "12px" }}>
+    30 June • Bengaluru
+  </span>
+</div>
 
-              <div style={eventItem}>
-                🎵 Music Fest
-              </div>
+<div style={eventItem}>
+  <strong>Startup Summit</strong>
+  <br />
+  <span style={{ color: "#64748b", fontSize: "12px" }}>
+    2 July • Hyderabad
+  </span>
+</div>
 
-              <div style={eventItem}>
-                🚀 Startup Summit
-              </div>
+<div style={eventItem}>
+  <strong>Career Expo</strong>
+  <br />
+  <span style={{ color: "#64748b", fontSize: "12px" }}>
+    5 July • Chennai
+  </span>
+</div>
 
-              <div style={eventItem}>
-                🎓 Career Expo
-              </div>
 
               <div
   onClick={() => navigate("/book-ticket/1")}
   style={{
-    padding: "15px",
+    padding: "10px",
     background: "#dbeafe",
     borderRadius: "10px",
     cursor: "pointer",
@@ -302,17 +469,18 @@ function Dashboard() {
 
 const cardStyle = {
   background: "#ffffff",
-  borderRadius: "16px",
-  padding: "15px",
-  minHeight: "100px",
+  borderRadius: "14px",
+  padding: "12px",
+  minHeight: "90px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   border: "1px solid #e5e7eb",
-  boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+  boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
+  transition: "0.3s",
+  cursor: "pointer",
 };
-
 const iconStyle = {
   fontSize: "22px",
   marginBottom: "6px",
@@ -320,7 +488,7 @@ const iconStyle = {
 
 const numberStyle = {
   color: "#2563eb",
-  fontSize: "28px",
+  fontSize: "20px",
   fontWeight: "700",
   margin: "4px 0",
 };
@@ -334,7 +502,7 @@ const labelStyle = {
 const sectionStyle = {
   background: "#ffffff",
   borderRadius: "18px",
-  padding: "20px",
+  padding: "16px",
   border: "1px solid #e5e7eb",
   boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
 };
@@ -346,21 +514,31 @@ const sectionTitle = {
 };
 
 const eventItem = {
-  padding: "12px",
+  padding: "10px",
   background: "#f8fafc",
-  borderRadius: "10px",
-  marginBottom: "10px",
+  borderRadius: "8px",
+  marginBottom: "8px",
+  fontSize: "14px",
 };
+
 
 const tableHead = {
   textAlign: "left",
-  padding: "16px",
+  padding: "10px",
   borderBottom: "2px solid #e5e7eb",
 };
 
 const tableCell = {
-  padding: "16px",
+  padding: "10px",
   borderBottom: "1px solid #f1f5f9",
 };
 
 export default Dashboard;
+
+const summaryCard = {
+  background: "#f8fafc",
+  borderRadius: "10px",
+  padding: "12px",
+  textAlign: "center",
+  border: "1px solid #e5e7eb",
+};
